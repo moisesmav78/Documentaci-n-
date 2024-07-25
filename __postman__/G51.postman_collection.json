@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "4bbb6894-c748-4cf0-aaf4-be996e26796e",
+		"name": "G51",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15965395"
+	},
+	"item": [
+		{
+			"name": "Medicamentos",
+			"item": [
+				{
+					"name": "/medicamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/medicamentos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/medicamentos/:id (Search)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/medicamentos/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/medicamentos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const medicamentos = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable('nuevo_medicamentos_id', medicamentos.message.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"factor x\",\n    \"precio\": 10,\n    \"stock\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/medicamentos",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/medicamentos/:id (New)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/medicamentos/{{nuevo_medicamentos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos",
+								"{{nuevo_medicamentos_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/medicamentos/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"factor x\",\n    \"precio\": 10,\n    \"stock\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/medicamentos/{{nuevo_medicamentos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos",
+								"{{nuevo_medicamentos_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/medicamentos/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/medicamentos/{{nuevo_medicamentos_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"medicamentos",
+								"{{nuevo_medicamentos_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personal",
+			"item": [
+				{
+					"name": "/personal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/personal",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/personal/:id (Search)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/personal/1",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/personal",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const personal = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable('nuevo_personal_id', personal.message.id)",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Raul Farias S\",\n    \"rol\": \"administrador\",\n    \"salario\": 1000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/personal",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/personal/:id (New)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/personal/{{nuevo_personal_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal",
+								"{{nuevo_personal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/personal/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Raul Farias S\",\n    \"rol\": \"administrador\",\n    \"salario\": 9000000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url_base}}/personal/{{nuevo_personal_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal",
+								"{{nuevo_personal_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/personal/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url_base}}/personal/{{nuevo_personal_id}}",
+							"host": [
+								"{{url_base}}"
+							],
+							"path": [
+								"personal",
+								"{{nuevo_personal_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Errors",
+			"item": [
+				{
+					"name": "404",
+					"item": [
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/error",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"error"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
